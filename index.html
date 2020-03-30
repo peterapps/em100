@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>Emscripten-Generated Code</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/assemble.js"></script>
+    <script src="js/memory.js"></script>
+    <script src="js/cpu.js"></script>
+    <script src="js/vga.js"></script>
+    <script src="js/main.js"></script>
+
+    <script async src="gen/compiled.js"></script>
+</head>
+<body>
+    <h1>em100</h1>
+    <div id="msg">
+        Select your ".e" files to begin.
+    </div>
+    <form action="" id="form">
+        <table style="float:left">
+            <thead>
+                <tr>
+                    <th>
+                        Source directory
+                    </th>
+                    <th>Main .e file</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="file" id="directory" webkitdirectory directory multiple />
+                    </td>
+                    <td>
+                        <span id="dir_prefix"></span>/
+                        <input type="text" id="main_path" placeholder="main.e" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>Actions</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Assemble" />
+                        <input type="button" value="Load" id="load_btn" />
+                        <input type="button" value="Run" id="run_btn" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <canvas id="vga_canvas" width="640" height="480"></canvas>
+</body>
+</html>
